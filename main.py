@@ -307,7 +307,7 @@ def mcChatDisable(commandSender, server, enabled):
         targetServer = "Battle Experimental"
 
     #Run the command on the mc server
-    outputMcCommand = "chatdisabler enablechat"+" "+enabeled
+    outputMcCommand = "chatdisabler enablechat"+" "+enabled
     if punishmentMcServer != peteroMenuServer
         peteroAPI.client.servers.send_console_command(punishmentMcServer, outputMcCommand) #Send command to server
         print("Sending command to server "+targetServer+": "+outputMcCommand)
@@ -337,7 +337,7 @@ def mcChatDisable(commandSender, server, enabled):
 @app_commands.guilds(mainGuild)
 @app_commands.default_permissions(ban_members=True)
 @app_commands.describe(server="The server to target (If none selected, fails)", enabled="Enable/Disable Chat")
-async def mcdisablechat(ctx: discord.Interaction, server: str, reason: bool):
+async def mcdisablechat(ctx: discord.Interaction, server: str, enabled: bool):
 
     #Do all the hard work
     mcChatDisable(ctx.user, server, enabled)
